@@ -1,4 +1,4 @@
-defmodule ElixirEncryptedChatWeb.ConnCase do
+defmodule ElixirChatWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule ElixirEncryptedChatWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use ElixirEncryptedChatWeb.ConnCase, async: true`, although
+  by setting `use ElixirChatWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -22,20 +22,20 @@ defmodule ElixirEncryptedChatWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import ElixirEncryptedChatWeb.ConnCase
+      import ElixirChatWeb.ConnCase
 
-      alias ElixirEncryptedChatWeb.Router.Helpers, as: Routes
+      alias ElixirChatWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint ElixirEncryptedChatWeb.Endpoint
+      @endpoint ElixirChatWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ElixirEncryptedChat.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ElixirChat.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(ElixirEncryptedChat.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(ElixirChat.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

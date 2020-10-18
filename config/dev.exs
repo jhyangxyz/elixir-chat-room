@@ -1,10 +1,10 @@
 use Mix.Config
 
 # Configure your database
-config :elixir_encrypted_chat, ElixirEncryptedChat.Repo,
+config :elixir_chat, ElixirChat.Repo,
   username: "user",
   password: "password",
-  database: "elixir_encrypted_chat_dev",
+  database: "elixir_chat_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -15,7 +15,7 @@ config :elixir_encrypted_chat, ElixirEncryptedChat.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :elixir_encrypted_chat, ElixirEncryptedChatWeb.Endpoint,
+config :elixir_chat, ElixirChatWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -55,13 +55,13 @@ config :elixir_encrypted_chat, ElixirEncryptedChatWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :elixir_encrypted_chat, ElixirEncryptedChatWeb.Endpoint,
+config :elixir_chat, ElixirChatWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/elixir_encrypted_chat_web/(live|views)/.*(ex)$",
-      ~r"lib/elixir_encrypted_chat_web/templates/.*(eex)$"
+      ~r"lib/elixir_chat_web/(live|views)/.*(ex)$",
+      ~r"lib/elixir_chat_web/templates/.*(eex)$"
     ]
   ]
 

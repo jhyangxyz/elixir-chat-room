@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :elixir_encrypted_chat,
-  ecto_repos: [ElixirEncryptedChat.Repo]
+config :elixir_chat,
+  ecto_repos: [ElixirChat.Repo]
 
 # Configures the endpoint
-config :elixir_encrypted_chat, ElixirEncryptedChatWeb.Endpoint,
+config :elixir_chat, ElixirChatWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "eARf/wrcmp3RsPELqHkimjNRWcWGO2THH9rUbeR6OYQLdO7agDJR70FUI4ehXvhA",
-  render_errors: [view: ElixirEncryptedChatWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: ElixirEncryptedChat.PubSub,
+  render_errors: [view: ElixirChatWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: ElixirChat.PubSub,
   live_view: [signing_salt: "QFs4sDdH"]
 
 # Configures Elixir's Logger
