@@ -1,7 +1,10 @@
 defmodule ElixirEncryptedChatWeb.PageController do
   use ElixirEncryptedChatWeb, :controller
 
+  alias ElixirEncryptedChat.ChatRoom
+
   def index(conn, _params) do
-    render(conn, "index.html")
+    messages = ChatRoom.list_last_messages()
+    render(conn, "index.html", messages: messages)
   end
 end

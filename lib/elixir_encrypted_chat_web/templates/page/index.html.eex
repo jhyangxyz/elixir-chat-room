@@ -6,8 +6,13 @@
   <div class="col-md-8">
     <h3>Messages: </h3>
     <ul id="messageList" class="list-unstyled">
+      <%= for message <- @messages do %>
+        <li><%= message.name %> : <%= message.body %></li>
+      <% end %>
     </ul>
-    <input type="text" id="newMessage" class="form-control">
+    <form id="newMessageForm">
+      <input type="text" id="newMessage" class="form-control">
+    </form>
   </div>
 
   <div class="col-md-4">

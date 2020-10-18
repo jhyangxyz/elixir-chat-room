@@ -13,6 +13,8 @@ defmodule ElixirEncryptedChat.Application do
       ElixirEncryptedChatWeb.Telemetry,
       # Start the PubSub system
       {Phoenix.PubSub, name: ElixirEncryptedChat.PubSub},
+      # Start Presence tracker
+      ElixirEncryptedChatWeb.Presence,
       # Start the Endpoint (http/https)
       ElixirEncryptedChatWeb.Endpoint
       # Start a worker by calling: ElixirEncryptedChat.Worker.start_link(arg)
